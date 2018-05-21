@@ -36,26 +36,58 @@ class Screen extends React.Component {
     }
 
     render() {
+        const initScreen =  this.state.screenName === "initScreen" && (
+                <div className="screen initScreen">
+                    <div>
+                        <button className="btn btn-success btn-lg " onClick={this.handler}>Новая игра</button>
+                    </div>
+                    <div>
+                        <input type="text" className="form-control" placeholder="Text input"></input>
+                        <button className="btn btn-primary btn-lg " onClick={this.handler}>Присоединиться</button>
+                    </div>
+
+                </div>
+            ),
+            waitStart = this.state.screenName === "waitStart" && (
+                <div className="screen waitScreen">
+                    gvvv
+                </div>
+            ),
+            canStart = this.state.screenName === "canStart" && (
+                <div className="screen canStartScreen">
+                    gvvv
+                </div>
+            ),
+            canMove = this.state.screenName === "canMove" && (
+                <div className="screen canMoveScreen">
+                    gvvv
+                </div>
+            ),
+            waitMove = this.state.screenName === "waitMove" && (
+                <div className="screen waitMoveScreen">
+                    gvvv
+                </div>
+            ),
+            selectCard = this.state.screenName === "selectCard" && (
+                <div className="screen selectCardScreen">
+                    gvvv
+                </div>
+            ),
+            showProgress = this.state.screenName === "showProgress" && (
+                <div className="screen progressScreen">
+                    gvvv
+                </div>
+            )
         return (
             <div className="screens">
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                    sdfsdf
-                </div>
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                    gvvv
-                </div>
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                    gvvv
-                </div>
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                        dsfsfd
-                </div>
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                            vsdvsdv
-                </div>
-                <div className="screen initScreen" display={this.state.screenName === "initScreen" ? "block" : "none"}>
-                        vsccxvxcv
-                </div>
+                {initScreen}
+                {waitStart}
+                {canStart}
+                {canMove}
+                {waitMove}
+                {selectCard}
+                {showProgress}
+
             </div>
         )
     }
